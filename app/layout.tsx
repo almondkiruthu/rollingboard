@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         {children}
+        <TailwindIndicator />
       </body>
     </html>
   );
