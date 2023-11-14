@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import localFont from 'next/font/local';
 
-import './globals.css';
+import '@/styles/globals.css';
 import { cn } from '@/lib/utils';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
+import { Analytics } from '@/components/analytics';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -40,8 +42,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        {children}
-        <TailwindIndicator />
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
+          {children}
+          <Analytics />
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   );
