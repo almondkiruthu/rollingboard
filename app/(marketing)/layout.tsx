@@ -1,5 +1,11 @@
 const MarketingLayout = () => {
-  return <div className="flex flex-col min-h-screeen"></div>;
+  return (
+    <div className="flex flex-col min-h-screeen">
+      <header className="container z-40 bg-background">
+        <div className="flex h-20 items-center justify-between py-6"></div>
+      </header>    
+    </div>
+  );
 };
 
 export default MarketingLayout;
