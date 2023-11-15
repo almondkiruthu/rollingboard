@@ -14,3 +14,7 @@ export type Siteconfig = {
     github: string;
   };
 };
+
+export type MarketingConfig = {
+  mainNav: MainNavItem[];
+};

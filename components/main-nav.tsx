@@ -12,7 +12,7 @@ import { MainNavItem } from "@/types";
 
 interface MainNavProps {
   items?: MainNavItem[];
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const MainNav = ({ items, children }: MainNavProps) => {
