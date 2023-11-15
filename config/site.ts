@@ -1,11 +1,4 @@
-type Siteconfig = {
-  name: string;
-  description: string;
-  url: string;
-  links: {
-    github: string;
-  };
-};
+import { Siteconfig } from "@/types";
 
 export const siteConfig: Siteconfig = {
   name: "Rollingboard",
