@@ -5,11 +5,13 @@ import {
   Loader2,
   LucideIcon,
   LucideProps,
+  X,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
 export const Icons = {
   logo: Command,
+  close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
