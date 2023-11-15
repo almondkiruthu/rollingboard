@@ -3,10 +3,13 @@ import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <div className='mx-auto my-auto'>
-      <Button>Levite</Button>
-      <h1 className='font-heading pt-4 text-4xl'>Hello</h1>
-    
+    <div>
+      <div className='mx-auto my-auto'>
+        <Button>Levite</Button>
+        <h1 className='font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl'>
+          An example app built using Next.js 13 server components.
+        </h1>
+      </div>
     </div>
   );
 }
