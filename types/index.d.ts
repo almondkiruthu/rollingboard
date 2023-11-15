@@ -16,5 +16,5 @@ export type Siteconfig = {
 };
 
 export type MarketingConfig = {
-  mainNav: MainNavItem[];
+  mainNav: MainNavItem[] | undefined;
 };

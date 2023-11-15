@@ -5,6 +5,7 @@ import {
   Loader2,
   LucideIcon,
   LucideProps,
+  Menu,
   X,
 } from "lucide-react";
 
@@ -12,6 +13,7 @@ export type Icon = LucideIcon;
 export const Icons = {
   logo: Command,
   close: X,
+  menu: Menu,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
@@ -52,7 +54,7 @@ export const Icons = {
         cy="13.65"
         r="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <ellipse
         cx="6.79412"
@@ -60,7 +62,7 @@ export const Icons = {
         rx="3.29412"
         ry="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.3"
+        fillOpacity="0.3"
       />
       <ellipse
         cx="14.7"
@@ -68,7 +70,7 @@ export const Icons = {
         rx="3.29412"
         ry="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.01"
+        fillOpacity="0.01"
       />
       <ellipse
         cx="14.7"
@@ -76,7 +78,7 @@ export const Icons = {
         rx="3.29412"
         ry="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.9"
+        fillOpacity="0.9"
       />
       <ellipse
         cx="14.7"
@@ -84,21 +86,21 @@ export const Icons = {
         rx="3.29412"
         ry="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <circle
         cx="22.6059"
         cy="5.74407"
         r="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.01"
+        fillOpacity="0.01"
       />
       <circle
         cx="22.6059"
         cy="13.65"
         r="3.29412"
         fill="#50ADBB"
-        fill-opacity="0.01"
+        fillOpacity="0.01"
       />
       <ellipse
         cx="22.6059"
