@@ -1,5 +1,5 @@
 const MarketingPage = () => {
-  return <div className="p-8 md:p-4 ">Hello!</div>;
+  return <div className="pt-[88px] md:pt-[88px] container"></div>;
 };
 
 export default MarketingPage;
