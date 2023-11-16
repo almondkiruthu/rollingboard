@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Icons } from "@/components/icons";
 import MainNav from "@/components/main-nav";
+import SiteFooter from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { marketingConfig } from "@/config/marketing";
 import { siteConfig } from "@/config/site";
@@ -56,6 +57,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
         </div>
       </header>
       <main className="flex-1">{children}</main>
+      <SiteFooter />
     </div>
   );
 };
