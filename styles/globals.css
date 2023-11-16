@@ -83,10 +83,3 @@ body,
       "calt" 1;
   }
 }
-
-.hero-background {
-  background:
-    url("../public/hero/Noise-Animation.webp"),
-    lightgray 0% 0% / 50px 50px repeat;
-  mix-blend-mode: soft-light;
-}
