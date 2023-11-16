@@ -55,7 +55,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
           </nav>
         </div>
       </header>
-      <main className="flex-1 container">{children}</main>
+      <main className="flex-1">{children}</main>
     </div>
   );
 };

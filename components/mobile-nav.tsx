@@ -27,7 +27,7 @@ const MobileNav = ({ items, children }: MobileNavProps) => {
             <span className="font-bold">{siteConfig.name}</span>
           </Link>
           <Separator className="my-2 ml-8" />
-          <nav className="flex flex-col items-center justify-center text-sm">
+          <nav className="flex flex-col items-center justify-center text-sm gap-y-2">
             {items?.map((item, index) => (
               <Link
                 key={index}
