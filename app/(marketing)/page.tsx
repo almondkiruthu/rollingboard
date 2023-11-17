@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -57,6 +58,62 @@ const MarketingPage = () => {
               Create Kanban Board
             </Link>
           </div>
+        </div>
+      </section>
+      <section
+        id="features"
+        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+      >
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            Features
+          </h2>
+        </div>
+        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-1 md:max-w-[64rem] md:grid-cols-3">
+          {/* Integrate Card*/}
+          <div className="relative overflow-hidden rounded-lg border bg-gradient-to-b from-background p-2">
+            <div className="flex h-[220px] flex-col justify-between items-center text-center rounded-md p-6">
+              <Icons.intergrate />
+              <div className="space-y-4">
+                <h3 className="font-bold">Integrate</h3>
+                <p className="text-sm text-muted-foreground">
+                  The ability to quickly set up and customize workflows for just
+                  about anything.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* Integrate Card*/}
+          <div className="relative overflow-hidden rounded-lg border bg-gradient-to-b from-background p-2">
+            <div className="flex h-[220px] flex-col justify-between items-center text-center rounded-md p-6">
+              <Icons.collaborate />
+              <div className="space-y-2">
+                <h3 className="font-bold">Collaborate</h3>
+                <p className="text-sm text-muted-foreground">
+                  Manage projects, organize tasks, and build team spirit—all in
+                  one place.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* Integrate Card*/}
+          <div className="relative overflow-hidden rounded-lg border bg-gradient-to-b from-background p-2">
+            <div className="flex h-[220px] flex-col justify-between items-center text-center rounded-md p-6">
+              <Icons.succeed />
+              <div className="space-y-4">
+                <h3 className="font-bold">Succeed</h3>
+                <p className="text-sm text-muted-foreground">
+                  Every single part of your task can be managed, tracked, and
+                  shared with teammates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="featutres-cards" className="container">
+        <div>
+          
         </div>
       </section>
     </>
