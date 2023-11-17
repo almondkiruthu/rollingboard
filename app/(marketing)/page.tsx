@@ -12,7 +12,7 @@ const MarketingPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+      <section className="relative space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:pt-32">
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center z-50">
@@ -59,8 +59,29 @@ const MarketingPage = () => {
         </div>
       </section>
       <section
+        id="featutres-cards"
+        className="container space-y-6 py-8 md:py-12"
+      >
+        <div className="hidden dark:block">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="mt-16 flow-root sm:mt-24">
+              <div className="-m-2 rounded-xl bg-cyan-900/50 p-2 ring-1 ring-inset ring-cyan-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
+                <Image
+                  src={board}
+                  alt="w"
+                  width={1364}
+                  height={866}
+                  quality={100}
+                  className="rounded-md bg-cyan-900/50  shadow-2xl ring-1 ring-cyan-900/50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
         id="features"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24 hidden md:block"
+        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:pt-20 lg:pb-18 hidden md:block"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
@@ -109,27 +130,7 @@ const MarketingPage = () => {
           </div>
         </div>
       </section>
-      <section
-        id="featutres-cards"
-        className="container space-y-6 py-8 md:py-12 lg:py-20"
-      >
-        <div className="hidden dark:block">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
-            <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 rounded-xl bg-cyan-900/50 p-2 ring-1 ring-inset ring-cyan-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
-                <Image
-                  src={board}
-                  alt="w"
-                  width={1364}
-                  height={866}
-                  quality={100}
-                  className="rounded-md bg-cyan-900/50  shadow-2xl ring-1 ring-cyan-900/50"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section id="open-source" className="container py-8 md:py-12 lg:py-24">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
