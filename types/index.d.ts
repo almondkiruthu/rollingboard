@@ -12,6 +12,7 @@ export type Siteconfig = {
   url: string;
   links: {
     github: string;
+    twitter?: string
   };
 };
 

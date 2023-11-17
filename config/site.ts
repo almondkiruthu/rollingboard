@@ -7,5 +7,6 @@ export const siteConfig: Siteconfig = {
   url: "http://localhost:3000/",
   links: {
     github: "https://github.com/almondkiruthu/rollingboard",
+    twitter: "https://twitter.com/almondkiruthu",
   },
 };
