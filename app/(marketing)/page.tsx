@@ -6,9 +6,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import board from "@/public/marketing/boards.png";
-import showcase1 from "@/public/marketing/showcase-1.webp";
-import showcase2 from "@/public/marketing/showcase-2.png";
-import showcase3 from "@/public/marketing/showcase-3.webp";
 import { ArrowRight } from "lucide-react";
 
 const MarketingPage = () => {
@@ -119,21 +116,40 @@ const MarketingPage = () => {
         <div className="hidden dark:block">
           <div className="mx-auto max-w-6xl px-6 lg:px-8">
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 rounded-xl bg-slate-900/50 p-2 ring-1 ring-inset ring-slate-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
+              <div className="-m-2 rounded-xl bg-cyan-900/50 p-2 ring-1 ring-inset ring-cyan-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <Image
                   src={board}
                   alt="w"
                   width={1364}
                   height={866}
                   quality={100}
-                  className="rounded-md bg-slate-900/50  shadow-2xl ring-1 ring-slate-900/50"
+                  className="rounded-md bg-cyan-900/50  shadow-2xl ring-1 ring-cyan-900/50"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+      <section id="open-source" className="container py-8 md:py-12 lg:py-24">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            Proudly Open Source
+          </h2>
+          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            Rollingboard is open source and powered by open source software.{" "}
+            <br />
+            The code is available on{"  "}
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4"
+            >
+              GitHub
+            </Link>
+          </p>
+        </div>
+      </section>
     </>
   );
 };
