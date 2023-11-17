@@ -5,7 +5,10 @@ import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import board from "@/public/marketing/boards.png";
 import showcase1 from "@/public/marketing/showcase-1.webp";
+import showcase2 from "@/public/marketing/showcase-2.png";
+import showcase3 from "@/public/marketing/showcase-3.webp";
 import { ArrowRight } from "lucide-react";
 
 const MarketingPage = () => {
@@ -60,7 +63,7 @@ const MarketingPage = () => {
       </section>
       <section
         id="features"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24 hidden md:block"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
@@ -111,152 +114,26 @@ const MarketingPage = () => {
       </section>
       <section
         id="featutres-cards"
-        className="container space-y-6 py-8 md:py-12 lg:py-24"
+        className="container space-y-6 py-8 md:py-12 lg:py-20"
       >
-        <div className="mx-auto grid jsutify-center gap-y-[2rem] sm:grid-cols-1 max-w-[80rem]">
-          {/* Showcase 1 */}
-          <div className="flex items-center justify-between space-x-2">
-            <div className="flex flex-col space-y-4">
-              <div className="relative flex items-center gap-x-2">
-                <svg
-                  className="p-[0.1rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="16"
-                  viewBox="0 0 15 16"
-                  fill="none"
-                >
-                  <path
-                    d="M12.5 4.25L5.625 11.125L2.5 8"
-                    stroke="#15AABF"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <svg
-                  className="absolute left-[-0.15rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="21"
-                  height="20"
-                  viewBox="0 0 21 20"
-                  fill="none"
-                >
-                  <path
-                    d="M1 10C1 15.2467 5.25329 19.5 10.5 19.5C15.7467 19.5 20 15.2467 20 10C20 4.75329 15.7467 0.5 10.5 0.5C5.25329 0.5 1 4.75329 1 10Z"
-                    stroke="#15AABF"
-                  />
-                </svg>
-                <p>Universal</p>
+        <div className="hidden dark:block">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="mt-16 flow-root sm:mt-24">
+              <div className="-m-2 rounded-xl bg-slate-900/50 p-2 ring-1 ring-inset ring-slate-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
+                <Image
+                  src={board}
+                  alt="w"
+                  width={1364}
+                  height={866}
+                  quality={100}
+                  className="rounded-md bg-slate-900/50  shadow-2xl ring-1 ring-slate-900/50"
+                />
               </div>
-              <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
-                Build the workflow
-                <br /> you want
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Manage your boards using Drag-n-Drop, create <br /> adittional
-                boards and tasks.
-              </p>
-            </div>
-            <div className="">
-              <Image src={showcase1} alt="showcase" />
-            </div>
-          </div>
-          {/* Showcase 2 */}
-          <div className="flex items-center justify-between space-x-2">
-            <div className="flex flex-col space-y-4">
-              <div className="relative flex items-center gap-x-2">
-                <svg
-                  className="p-[0.1rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="16"
-                  viewBox="0 0 15 16"
-                  fill="none"
-                >
-                  <path
-                    d="M12.5 4.25L5.625 11.125L2.5 8"
-                    stroke="#15AABF"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <svg
-                  className="absolute left-[-0.15rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="21"
-                  height="20"
-                  viewBox="0 0 21 20"
-                  fill="none"
-                >
-                  <path
-                    d="M1 10C1 15.2467 5.25329 19.5 10.5 19.5C15.7467 19.5 20 15.2467 20 10C20 4.75329 15.7467 0.5 10.5 0.5C5.25329 0.5 1 4.75329 1 10Z"
-                    stroke="#15AABF"
-                  />
-                </svg>
-                <p>Universal</p>
-              </div>
-              <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
-                Build the workflow
-                <br /> you want
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Manage your boards using Drag-n-Drop, create <br /> adittional
-                boards and tasks.
-              </p>
-            </div>
-            <div className="">
-              <Image src={showcase1} alt="showcase" />
-            </div>
-          </div>
-          {/* Showcase 3 */}
-          <div className="flex items-center justify-between space-x-2">
-            <div className="flex flex-col space-y-4">
-              <div className="relative flex items-center gap-x-2">
-                <svg
-                  className="p-[0.1rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="16"
-                  viewBox="0 0 15 16"
-                  fill="none"
-                >
-                  <path
-                    d="M12.5 4.25L5.625 11.125L2.5 8"
-                    stroke="#15AABF"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <svg
-                  className="absolute left-[-0.15rem]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="21"
-                  height="20"
-                  viewBox="0 0 21 20"
-                  fill="none"
-                >
-                  <path
-                    d="M1 10C1 15.2467 5.25329 19.5 10.5 19.5C15.7467 19.5 20 15.2467 20 10C20 4.75329 15.7467 0.5 10.5 0.5C5.25329 0.5 1 4.75329 1 10Z"
-                    stroke="#15AABF"
-                  />
-                </svg>
-                <p>Universal</p>
-              </div>
-              <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
-                Build the workflow
-                <br /> you want
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Manage your boards using Drag-n-Drop, create <br /> adittional
-                boards and tasks.
-              </p>
-            </div>
-            <div className="">
-              <Image src={showcase1} alt="showcase" />
             </div>
           </div>
         </div>
       </section>
+      
     </>
   );
 };
