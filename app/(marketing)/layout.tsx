@@ -17,8 +17,11 @@ interface MarketingLayoutProps {
 const MarketingLayout = ({ children }: MarketingLayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="container z-40 bg-background">
-        <div className="h-20 md:justify-between items-center flex py-6">
+      <header
+        className="fixed w-full bg-background/95 z-50 backdrop-blur 
+      supports-[backdrop-filter]:bg-background/60"
+      >
+        <div className="container h-20 md:justify-between items-center flex py-6">
           <Link href="/" className="items-center space-x-2 flex">
             <Icons.mainLogo className="hidden md:inline-block" />
             <span className="hidden font-bold md:inline-block">
@@ -56,7 +59,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
           </nav>
         </div>
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pt-20">{children}</main>
       <SiteFooter />
     </div>
   );
