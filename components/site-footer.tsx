@@ -1,8 +1,8 @@
 import { Icons } from "./icons";
-import { ModeToggle } from "./mode-toggle";
+// import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
 
-const SiteFooter = () => {
+const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
   return (
     <footer>
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
@@ -30,7 +30,7 @@ const SiteFooter = () => {
             .
           </p>
         </div>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </div>
     </footer>
   );
