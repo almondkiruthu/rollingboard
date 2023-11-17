@@ -1,7 +1,6 @@
 import { Icons } from "./icons";
 import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 const SiteFooter = () => {
   return (
