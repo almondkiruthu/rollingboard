@@ -7,6 +7,6 @@ export const siteConfig: Siteconfig = {
   url: "https://rollingboard.vercel.app",
   links: {
     github: "https://github.com/almondkiruthu/rollingboard",
-    twitter: "https://twitter.com/almondkiruthu",
+    twitter: "https://github.com/almondkiruthu",
   },
 };
