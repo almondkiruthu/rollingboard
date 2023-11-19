@@ -47,7 +47,7 @@ const MarketingPage = () => {
           </p>
           <div>
             <Link
-              href="/"
+              href="/dashboard"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-cyan-700 text-foreground hover:transition-all"
