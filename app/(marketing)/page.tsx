@@ -13,7 +13,7 @@ const MarketingPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:pt-32">
-        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1.5px,transparent_1.5px),linear-gradient(to_bottom,#4f4f4f2e_1.5px,transparent_1.5px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center z-50">
           <div className="mb-8 flex">
