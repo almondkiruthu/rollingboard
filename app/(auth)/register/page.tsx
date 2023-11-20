@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
+import UserAuthForm from "@/components/user-auth-form";
 import { cn } from "@/lib/utils";
 
 const RegitsterPage = () => {
@@ -34,7 +35,7 @@ const RegitsterPage = () => {
               Enter your email below to create your account
             </p>
           </div>
-          {/* TODO UserAuthForm  */}
+          <UserAuthForm />
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{" "}
             <Link
