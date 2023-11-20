@@ -45,17 +45,15 @@ const MarketingPage = () => {
             Create, share, and get feedback with collaborative <br /> boards for
             rapid development.
           </p>
-          <div>
-            <Link
-              href="/dashboard"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "bg-cyan-700 text-foreground hover:transition-all"
-              )}
-            >
-              Create Kanban Board
-            </Link>
-          </div>
+          <Link
+            href="/register"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "bg-cyan-700 text-foreground"
+            )}
+          >
+            Create Kanban Board
+          </Link>
         </div>
       </section>
       <section

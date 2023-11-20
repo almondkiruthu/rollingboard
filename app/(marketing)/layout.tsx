@@ -45,7 +45,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
               Login
             </Link>
             <Link
-              href="/signup"
+              href="/register"
               className={cn(
                 buttonVariants({
                   variant: "outline",
