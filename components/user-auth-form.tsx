@@ -1,12 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,8 +25,11 @@ const UserAuthForm = () => {
     resolver: zodResolver(userAuthFormSchema),
   });
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
+
   const onSubmit = (values: z.infer<typeof userAuthFormSchema>) => {
-    console.log(values);
+    setIsLoading(true);
   };
 
   return (
