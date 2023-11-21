@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/analytics";
@@ -9,8 +8,8 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
+const fontSans = localFont({
+  src: "../assets/fonts/Inter-Regular.ttf",
   variable: "--font-sans",
 });
 
@@ -44,6 +43,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
