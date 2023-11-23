@@ -30,6 +30,7 @@ const UserAuthForm = () => {
 
   const onSubmit = (values: z.infer<typeof userAuthFormSchema>) => {
     setIsLoading(true);
+    console.log(values);
   };
 
   return (
