@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Icons } from "./icons";
 import { Input } from "./ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -28,9 +30,10 @@ const UserAuthForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
 
-  const onSubmit = (values: z.infer<typeof userAuthFormSchema>) => {
+  const onSubmit = async (values: z.infer<typeof userAuthFormSchema>) => {
     setIsLoading(true);
-    console.log(values);
+
+    const signInResult = await signIn("email");
   };
 
   return (
@@ -73,7 +76,20 @@ const UserAuthForm = () => {
           </span>
         </div>
       </div>
-      <Button type="button" variant="outline">
+      <Button
+        onClick={() => {
+          setIsGithubLoading(true);
+          signIn("github");
+        }}
+        disabled={isLoading || isGithubLoading}
+        type="button"
+        variant="outline"
+      >
+        {isGithubLoading ? (
+          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        ) : (
+          <Icons.gitHub className="mr-2 h-4 w-4" />
+        )}
         Github
       </Button>
     </div>
