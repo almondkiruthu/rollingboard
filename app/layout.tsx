@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const fontSans = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -42,21 +43,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable
-        )}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
-          <Analytics />
-          <TailwindIndicator />
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+            fontHeading.variable
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            {children}
+            <Analytics />
+            <TailwindIndicator />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
