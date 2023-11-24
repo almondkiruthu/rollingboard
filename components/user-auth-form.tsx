@@ -13,6 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
@@ -30,6 +31,22 @@ const UserAuthForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
 
+  const loginwithGithub = async () => {
+    setIsGithubLoading(true);
+
+    try {
+      await signIn("github");
+    } catch {
+      // Toast Notification
+      toast({
+        title: "Something went wrong",
+        description: "Your sign in request has failed please try again",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGithubLoading(false);
+    }
+  };
   const onSubmit = async (values: z.infer<typeof userAuthFormSchema>) => {
     setIsLoading(true);
 
@@ -77,10 +94,7 @@ const UserAuthForm = () => {
         </div>
       </div>
       <Button
-        onClick={() => {
-          setIsGithubLoading(true);
-          signIn("github");
-        }}
+        onClick={loginwithGithub}
         disabled={isLoading || isGithubLoading}
         type="button"
         variant="outline"
