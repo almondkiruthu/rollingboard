@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { NextAuthOptions } from "next-auth";
-import EmailProvider from "next-auth/providers/email";
+import { NextAuthOptions, getServerSession } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 
 export const authOptions: NextAuthOptions = {
@@ -14,7 +14,46 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-    EmailProvider({}),
+    GoogleProvider({
+      clientId: process.env.GOGGLE_CLIENT_ID!,
+      clientSecret: process.env.GOGGLE_CLIENT_SECRET!,
+    }),
   ],
-  callbacks: {},
+  callbacks: {
+    async session({ token, session }) {
+      if (token) {
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
+      }
+
+      return session;
+    },
+
+    async jwt({ token, user }) {
+      const dbUser = await db.user.findFirst({
+        where: {
+          email: token.email,
+        },
+      });
+
+      if (!dbUser) {
+        token.id = user!.id;
+        return token;
+      }
+
+      return {
+        id: dbUser.id,
+        name: dbUser.name,
+        email: dbUser.email,
+        picture: dbUser.image,
+      };
+    },
+    redirect() {
+      return "/";
+    },
+  },
 };
+
+export const getAuthSession = () => getServerSession(authOptions);
