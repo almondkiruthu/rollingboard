@@ -1,4 +1,5 @@
 import { Icons } from "./icons";
+import { ModeToggle } from "./mode-toggle";
 // import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -31,7 +32,7 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
             .
           </p>
         </div>
-        {/* <ModeToggle /> */}
+        <ModeToggle />
       </div>
     </footer>
   );

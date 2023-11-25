@@ -45,41 +45,24 @@ const MarketingPage = () => {
             Create, share, and get feedback with collaborative <br /> boards for
             rapid development.
           </p>
-          <Link
-            href="/register"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "bg-cyan-700 text-foreground"
-            )}
-          >
-            Create Kanban Board
-          </Link>
-        </div>
-      </section>
-      <section
-        id="featutres-cards"
-        className="container space-y-6 py-8 md:py-12"
-      >
-        <div className="hidden dark:block">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
-            <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 rounded-xl bg-cyan-900/50 p-2 ring-1 ring-inset ring-cyan-900/50 lg:-m-4 lg:rounded-2xl lg:p-4">
-                <Image
-                  src={board}
-                  alt="w"
-                  width={1364}
-                  height={866}
-                  quality={100}
-                  className="rounded-md bg-cyan-900/50  shadow-2xl ring-1 ring-cyan-900/50"
-                />
-              </div>
-            </div>
+          <div className="space-x-4">
+            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+              Get Started
+            </Link>
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+            >
+              GitHub
+            </Link>
           </div>
         </div>
       </section>
       <section
         id="features"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:pt-20 lg:pb-18 hidden md:block"
+        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:pt-20 lg:pb-18"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
