@@ -56,14 +56,6 @@ model User {
   @@map(name: "users")
 }
 
-model VerificationToken {
-  identifier String   @id @map("_id") @db.ObjectId
-  token      String   @unique
-  expires    DateTime
-
-  @@unique([identifier, token])
-}
-
 model Task {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   title       String
