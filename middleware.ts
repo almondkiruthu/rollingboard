@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 import { getToken } from "next-auth/jwt";
 import { withAuth } from "next-auth/middleware";
 
 export default withAuth(
-  async function middleware(req: NextRequest) {
+  async function middleware(req) {
     const token = await getToken({ req });
     const isAuth = !!token;
     const isAuthPage =
@@ -43,5 +43,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/editor/:path*", "/login", "/register"],
+  matcher: ["/dashboard/:path*", "/login", "/register"],
 };
