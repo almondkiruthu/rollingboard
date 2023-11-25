@@ -29,7 +29,7 @@ export default withAuth(
         new URL(`/login?from=${encodeURIComponent(from)}`, req.url)
       );
     }
-  },
+  }
   // {
   //   callbacks: {
   //     async authorized() {
@@ -43,5 +43,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/login", "/register"],
+  matcher: ["/dashboard/:path*"],
 };
