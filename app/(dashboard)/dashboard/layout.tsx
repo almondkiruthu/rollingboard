@@ -1,6 +1,11 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { Icons } from "@/components/icons";
+import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
+import { dashboardConfig } from "@/config/dashboard";
+import { siteConfig } from "@/config/site";
 import getCurrentUser from "@/lib/session";
 
 interface DashBoardLayoutProps {
@@ -19,8 +24,14 @@ const DashBoardLayout = async ({ children }: DashBoardLayoutProps) => {
         className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur 
       supports-[backdrop-filter]:bg-background/60"
       >
-        <div className="container flex h-16 items-center py-4">
-          {/* Insert main nav */}
+        <div className="container flex h-16 items-center py-6 md:justify-between">
+          <Link href="/" className="items-center space-x-2 flex">
+            <Icons.mainLogo className="hidden md:inline-block" />
+            <span className="hidden font-bold md:inline-block">
+              {siteConfig.name}
+            </span>
+          </Link>
+          <MainNav items={dashboardConfig.mainNav} />
           {/* Create User Acount Nav */}
         </div>
       </header>

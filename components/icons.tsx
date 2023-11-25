@@ -9,6 +9,7 @@ import {
   LucideProps,
   Menu,
   Settings,
+  User,
   UserCogIcon,
   X,
 } from "lucide-react";
@@ -24,6 +25,7 @@ export const Icons = {
   project: FileText,
   billing: CreditCard,
   settings: Settings,
+  user: User,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
