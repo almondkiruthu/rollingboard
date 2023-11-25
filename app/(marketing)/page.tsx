@@ -1,12 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import board from "@/public/marketing/boards.png";
-import { ArrowRight } from "lucide-react";
 
 const MarketingPage = () => {
   return (
