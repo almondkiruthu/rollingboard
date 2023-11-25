@@ -2,10 +2,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Command,
+  CreditCard,
+  FileText,
   Loader2,
   LucideIcon,
   LucideProps,
   Menu,
+  Settings,
+  UserCogIcon,
   X,
 } from "lucide-react";
 
@@ -17,6 +21,9 @@ export const Icons = {
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
+  project: FileText,
+  billing: CreditCard,
+  settings: Settings,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
