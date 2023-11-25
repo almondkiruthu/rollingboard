@@ -20,6 +20,24 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
             >
               Almond
             </a>
+            . Inspired by{" "}
+            <a
+              href="https://tx.shadcn.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              Taxonomy
+            </a>
+            . Built by{" "}
+            <a
+              href="https://twitter.com/shadcn"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              Shadcn
+            </a>
             . The source code is available on{" "}
             <a
               href={siteConfig.links.github}
