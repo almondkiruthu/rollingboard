@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Icons } from "@/components/icons";
 import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
+import UserAccountNav from "@/components/user-account-nav";
 import { dashboardConfig } from "@/config/dashboard";
 import { siteConfig } from "@/config/site";
 import getCurrentUser from "@/lib/session";
@@ -31,8 +32,18 @@ const DashBoardLayout = async ({ children }: DashBoardLayoutProps) => {
               {siteConfig.name}
             </span>
           </Link>
-          <MainNav items={dashboardConfig.mainNav} />
-          {/* Create User Acount Nav */}
+          <div>
+            <MainNav items={dashboardConfig.mainNav} />
+          </div>
+          <nav className="ml-auto md:ml-0">
+            <UserAccountNav
+              user={{
+                name: user.name,
+                image: user.image,
+                email: user.email,
+              }}
+            />
+          </nav>
         </div>
       </header>
       <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
