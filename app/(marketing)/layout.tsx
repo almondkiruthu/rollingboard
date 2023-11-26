@@ -33,7 +33,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
           </div>
           <nav className="flex gap-x-4 ml-auto md:ml-0">
             <Link
-              href="/login"
+              href="/sign-in"
               className={cn(
                 buttonVariants({
                   variant: "ghost",
@@ -45,7 +45,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
               Login
             </Link>
             <Link
-              href="/register"
+              href="/sign-up"
               className={cn(
                 buttonVariants({
                   variant: "outline",
