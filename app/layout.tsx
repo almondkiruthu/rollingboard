@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppProps } from "next/app";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/analytics";
@@ -22,6 +23,7 @@ const fontHeading = localFont({
 
 interface RootLayoutProps {
   children: React.ReactNode;
+  pageProps: AppProps;
 }
 
 export const metadata: Metadata = {
@@ -42,9 +44,9 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children, pageProps }: RootLayoutProps) {
   return (
-    <ClerkProvider>
+    <ClerkProvider {...pageProps}>
       <html lang="en" suppressHydrationWarning>
         {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
         <body
