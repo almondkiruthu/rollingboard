@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { Icons } from "@/components/icons";
 import MainNav from "@/components/main-nav";
@@ -17,7 +17,7 @@ const DashBoardLayout = async ({ children }: DashBoardLayoutProps) => {
   const user = await getCurrentUser();
 
   if (!user) {
-    return notFound();
+    redirect("/login");
   }
   return (
     <div className="flex min-h-screen flex-col space-y-6">
