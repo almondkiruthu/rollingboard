@@ -1,61 +1,38 @@
-import { db } from "@/lib/db";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { NextAuthOptions } from "next-auth";
-import GitHubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
+import { db } from "./db";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import NextAuth, { NextAuthConfig } from "next-auth";
+import GitHub from "next-auth/providers/Github";
 
-export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(db),
-  session: {
-    strategy: "jwt",
-  },
+export const authConfig = {
   pages: {
     signIn: "/login",
+    signOut: "/",
+    newUser: "/register",
   },
-  providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-  ],
+  adapter: PrismaAdapter(db),
+  providers: [GitHub],
   callbacks: {
-    async session({ token, session }) {
-      if (token) {
-        session.user.id = token.id;
-        session.user.name = token.name;
-        session.user.email = token.email;
-        session.user.image = token.picture;
-      }
-
+    async session({ session, user }) {
+      session.user.id = user.id;
       return session;
     },
+    authorized({ auth, request: { nextUrl } }) {
+      const isLoggedIn = !!auth?.user;
+      const paths = ["/dashboard/:path*"];
+      const isProtected = paths.some((path) =>
+        nextUrl.pathname.startsWith(path)
+      );
 
-    async jwt({ token, user }) {
-      const dbUser = await db.user.findFirst({
-        where: {
-          email: token.email,
-        },
-      });
+      if (isProtected && !isLoggedIn) {
+        const redirectUrl = new URL("api/auth/login", nextUrl.origin);
+        redirectUrl.searchParams.append("callbackUrl", nextUrl.href);
 
-      if (!dbUser) {
-        token.id = user!.id;
-        return token;
+        return Response.redirect(redirectUrl);
       }
 
-      return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        picture: dbUser.image,
-      };
-    },
-
-    redirect() {
-      return "/dashboard";
+      return true;
     },
   },
-};
+} satisfies NextAuthConfig;
+
+export const { handlers, auth, signOut, signIn } = NextAuth(authConfig);

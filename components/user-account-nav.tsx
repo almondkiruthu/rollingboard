@@ -1,7 +1,6 @@
-"use client"
-
 import Link from "next/link";
 
+import SignOutButton from "./sign-out-button";
 import UserAvatar from "./user-avatar";
 import {
   DropdownMenu,
@@ -10,8 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { signOut } from "@/lib/auth";
 import { User } from "next-auth";
-import { signOut } from "next-auth/react";
 
 interface UserAccountNavProps extends React.HTMLAttributes<HTMLDivElement> {
   user: Pick<User, "name" | "image" | "email">;
@@ -48,16 +47,15 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
           <Link href="/dashboard/settings">Settings</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          className="cursor-pointer"
-          onSelect={(e) => {
-            e.preventDefault();
-            signOut({
-              callbackUrl: `${window.location.origin}/login`,
-            });
-          }}
-        >
-          Sign Out
+        <DropdownMenuItem className="cursor-pointer">
+          <SignOutButton
+            signOut={async () => {
+              "use server";
+              await signOut({
+                redirectTo: "/",
+              });
+            }}
+          />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

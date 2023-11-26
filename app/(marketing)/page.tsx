@@ -27,7 +27,7 @@ const MarketingPage = () => {
           </p>
           <div className="space-x-4">
             <Link
-              href="/login"
+              href="/dashboard"
               className={cn(buttonVariants({ size: "lg" }), "bg-cyan-700")}
             >
               Get Started
