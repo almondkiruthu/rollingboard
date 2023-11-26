@@ -1,24 +1,18 @@
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import { Icons } from "@/components/icons";
 import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
-import UserAccountNav from "@/components/user-account-nav";
 import { dashboardConfig } from "@/config/dashboard";
 import { siteConfig } from "@/config/site";
-import getCurrentUser from "@/lib/session";
+import { UserButton } from "@clerk/nextjs";
 
 interface DashBoardLayoutProps {
   children?: React.ReactNode;
 }
 
-const DashBoardLayout = async ({ children }: DashBoardLayoutProps) => {
-  const user = await getCurrentUser();
-
-  if (!user) {
-    redirect("/login");
-  }
+const DashBoardLayout = ({ children }: DashBoardLayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col space-y-6">
       <header
@@ -36,13 +30,7 @@ const DashBoardLayout = async ({ children }: DashBoardLayoutProps) => {
             <MainNav items={dashboardConfig.mainNav} />
           </div>
           <nav className="ml-auto md:ml-0">
-            <UserAccountNav
-              user={{
-                name: user.name,
-                image: user.image,
-                email: user.email,
-              }}
-            />
+            <UserButton afterSignOutUrl="/" />
           </nav>
         </div>
       </header>
