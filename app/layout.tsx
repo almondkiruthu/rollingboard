@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AppProps } from "next/app";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/analytics";
@@ -10,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { neobrutalism } from "@clerk/themes";
 
 const fontSans = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -23,7 +23,6 @@ const fontHeading = localFont({
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  pageProps: AppProps;
 }
 
 export const metadata: Metadata = {
@@ -44,9 +43,14 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({ children, pageProps }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider {...pageProps}>
+    <ClerkProvider
+      appearance={{
+        baseTheme: neobrutalism,
+        variables: { colorPrimary: "#0e7490" },
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
         {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
         <body
