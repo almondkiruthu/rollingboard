@@ -10,7 +10,12 @@ export const authConfig = {
     newUser: "/register",
   },
   adapter: PrismaAdapter(db),
-  providers: [GitHub],
+  providers: [
+    GitHub({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+    }),
+  ],
   callbacks: {
     async session({ session, user }) {
       session.user.id = user.id;
