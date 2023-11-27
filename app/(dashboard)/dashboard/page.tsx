@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
 
+import DashBoardHeader from "@/components/header";
+import DashBoardShell from "@/components/shell";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 
@@ -27,7 +29,15 @@ const DashBoardPage = async () => {
       updatedAt: "desc",
     },
   });
-  return <div>DashBoard Page</div>;
+  return (
+    <DashBoardShell>
+      <DashBoardHeader
+        header="Projects"
+        text="Create and manage projects"
+      ></DashBoardHeader>
+      <div>{tasks?.length}</div>
+    </DashBoardShell>
+  );
 };
 
 export default DashBoardPage;
