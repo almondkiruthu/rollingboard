@@ -7,7 +7,7 @@ import TaskItem from "@/components/task-item";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 
-export const metdata = {
+export const metadata = {
   title: "Dashboard",
 };
 
