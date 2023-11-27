@@ -66,10 +66,13 @@ model VerificationToken {
 }
 
 model Task {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String?
-  creatorId   String  @db.ObjectId
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @default(now()) @map(name: "updated_at")
+  creatorId   String   @db.ObjectId
 
   creator User @relation(fields: [creatorId], references: [id])
 
