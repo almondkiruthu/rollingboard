@@ -13,7 +13,7 @@ const EmptyPlaceHolder = ({
   return (
     <div
       className={cn(
-        "flex flex-col min-h-[400px] items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50",
+        "flex flex-col min-h-[400px] items-center justify-center rounded-md border-[1.5px] border-dashed p-8 text-center animate-in fade-in-50",
         className
       )}
       {...props}

@@ -45,13 +45,13 @@ const DashBoardPage = async () => {
             ))}
           </div>
         ) : (
-          <EmptyPlaceHolder>
+          <EmptyPlaceHolder className="bg-slate-50/30 py-8 dark:bg-transparent">
             <EmptyPlaceHolder.Icon name="project" />
             <EmptyPlaceHolder.Title>No Projects created</EmptyPlaceHolder.Title>
             <EmptyPlaceHolder.Description>
               You don&apos;t have any projects yet. Start creating tasks.
             </EmptyPlaceHolder.Description>
-            {/* Create Project create button */}
+            {/* TODO:Create Project create button */}
           </EmptyPlaceHolder>
         )}
       </div>
