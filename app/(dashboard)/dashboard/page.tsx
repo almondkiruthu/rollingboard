@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import EmptyPlaceHolder from "@/components/empty-placeholder";
 import DashBoardHeader from "@/components/header";
 import DashBoardShell from "@/components/shell";
 import TaskItem from "@/components/task-item";
@@ -44,7 +45,14 @@ const DashBoardPage = async () => {
             ))}
           </div>
         ) : (
-          <div>{/* TODO: Create a placeHolder */}</div>
+          <EmptyPlaceHolder>
+            <EmptyPlaceHolder.Icon name="project" />
+            <EmptyPlaceHolder.Title>No Projects created</EmptyPlaceHolder.Title>
+            <EmptyPlaceHolder.Description>
+              You don&apos;t have any projects yet. Start creating tasks.
+            </EmptyPlaceHolder.Description>
+            {/* Create Project create button */}
+          </EmptyPlaceHolder>
         )}
       </div>
     </DashBoardShell>
