@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
   Command,
@@ -26,6 +27,7 @@ export const Icons = {
   billing: CreditCard,
   settings: Settings,
   user: User,
+  arrowRight: ArrowRight,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
