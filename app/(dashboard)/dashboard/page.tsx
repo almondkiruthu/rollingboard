@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 
 import DashBoardHeader from "@/components/header";
 import DashBoardShell from "@/components/shell";
+import TaskItem from "@/components/task-item";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 
@@ -35,7 +36,17 @@ const DashBoardPage = async () => {
         header="Projects"
         text="Create and manage projects"
       ></DashBoardHeader>
-      <div>{tasks?.length}</div>
+      <div>
+        {tasks?.length ? (
+          <div className="divide-y divide-border rounded-md border">
+            {tasks.map((task) => (
+              <TaskItem key={task.id} task={task} />
+            ))}
+          </div>
+        ) : (
+          <div>{/* TODO: Create a placeHolder */}</div>
+        )}
+      </div>
     </DashBoardShell>
   );
 };
