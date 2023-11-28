@@ -8,8 +8,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { neobrutalism } from "@clerk/themes";
 
 const fontSans = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -45,29 +43,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: neobrutalism,
-        variables: { colorPrimary: "#0e7490" },
-      }}
-    >
-      <html lang="en" suppressHydrationWarning>
-        {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link> */}
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-            fontHeading.variable
-          )}
-        >
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            {children}
-            <Analytics />
-            <Toaster />
-            <TailwindIndicator />
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          {children}
+          <Analytics />
+          <Toaster />
+          <TailwindIndicator />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
