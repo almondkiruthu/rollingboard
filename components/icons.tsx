@@ -9,6 +9,7 @@ import {
   LucideIcon,
   LucideProps,
   Menu,
+  Plus,
   Settings,
   User,
   X,
@@ -28,6 +29,7 @@ export const Icons = {
   settings: Settings,
   user: User,
   arrowRight: ArrowRight,
+  add: Plus,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

@@ -2,8 +2,10 @@ import { redirect } from "next/navigation";
 
 import EmptyPlaceHolder from "@/components/empty-placeholder";
 import DashBoardHeader from "@/components/header";
+import { Icons } from "@/components/icons";
 import DashBoardShell from "@/components/shell";
 import TaskItem from "@/components/task-item";
+import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 
@@ -51,7 +53,10 @@ const DashBoardPage = async () => {
             <EmptyPlaceHolder.Description>
               You don&apos;t have any projects yet. Start creating tasks.
             </EmptyPlaceHolder.Description>
-            {/* TODO:Create Project create button */}
+            <Button className="flex items-center" variant="primary">
+              <Icons.add className="mr-2 h-4 w-4" />
+              New Project
+            </Button>
           </EmptyPlaceHolder>
         )}
       </div>
