@@ -7,7 +7,7 @@ import DashBoardNav from "@/components/nav";
 import SiteFooter from "@/components/site-footer";
 import { dashboardConfig } from "@/config/dashboard";
 import { siteConfig } from "@/config/site";
-import { UserButton } from "@clerk/nextjs";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
 interface DashBoardLayoutProps {
   children?: React.ReactNode;
@@ -30,8 +30,33 @@ const DashBoardLayout = ({ children }: DashBoardLayoutProps) => {
           <div>
             <MainNav items={dashboardConfig.mainNav} />
           </div>
-          <nav className="ml-auto md:ml-0">
-            <UserButton afterSignOutUrl="/" />
+          <nav className="flex gap-x-2 ml-auto md:ml-0">
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: {
+                    height: 30,
+                    width: 30,
+                  },
+                },
+              }}
+            />
+            <OrganizationSwitcher
+              hidePersonal
+              afterCreateOrganizationUrl="/organization/:id"
+              afterLeaveOrganizationUrl="/select-org"
+              afterSelectOrganizationUrl="/organziation/:id"
+              appearance={{
+                elements: {
+                  rootBox: {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  },
+                },
+              }}
+            />
           </nav>
         </div>
       </header>
