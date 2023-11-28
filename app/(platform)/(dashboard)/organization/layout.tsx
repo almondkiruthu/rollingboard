@@ -30,7 +30,7 @@ const DashBoardLayout = ({ children }: DashBoardLayoutProps) => {
           <div>
             <MainNav items={dashboardConfig.mainNav} />
           </div>
-          <nav className="flex gap-x-2 ml-auto md:ml-0">
+          <nav className="flex gap-x-3 ml-auto md:ml-0">
             <UserButton
               afterSignOutUrl="/"
               appearance={{
@@ -62,13 +62,13 @@ const DashBoardLayout = ({ children }: DashBoardLayoutProps) => {
       </header>
       <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
         <aside className="hidden w-[200px] flex-col md:flex">
-          <DashBoardNav items={dashboardConfig.sideBarNav} />
+          {/* <DashBoardNav items={dashboardConfig.sideBarNav} /> */}
         </aside>
-        <main className="flex w-full flex-1 flex-col overflow-x-hidden overflow-y-auto">
+        {/* <main className="flex w-full flex-1 flex-col overflow-x-hidden overflow-y-auto">
           {children}
-        </main>
+        </main> */}
       </div>
-      <SiteFooter className="border-t" />
+      {/* <SiteFooter className="border-t" /> */}
     </div>
   );
 };
