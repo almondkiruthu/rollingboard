@@ -1,9 +1,10 @@
+import Link from "next/link";
+
 import { Icons } from "@/components/icons";
 import MainNav from "@/components/main-nav";
 import { dashboardConfig } from "@/config/dashboard";
 import { siteConfig } from "@/config/site";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -24,17 +25,6 @@ const Navbar = () => {
             <MainNav items={dashboardConfig.mainNav} />
           </div>
           <nav className="flex gap-x-3 ml-auto md:ml-0">
-            <UserButton
-              afterSignOutUrl="/"
-              appearance={{
-                elements: {
-                  avatarBox: {
-                    height: 30,
-                    width: 30,
-                  },
-                },
-              }}
-            />
             <OrganizationSwitcher
               hidePersonal
               afterCreateOrganizationUrl="/organization/:id"
@@ -46,6 +36,17 @@ const Navbar = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                  },
+                },
+              }}
+            />
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: {
+                    height: 30,
+                    width: 30,
                   },
                 },
               }}
