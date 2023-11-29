@@ -50,7 +50,10 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
             .
           </p>
         </div>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
+        <p className="text-center text-sm leading-loose md:text-left">
+          Light mode is the new dark mode 😊
+        </p>
       </div>
     </footer>
   );
