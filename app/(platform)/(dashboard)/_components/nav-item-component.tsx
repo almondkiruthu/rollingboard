@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
+import { Icons } from "@/components/icons";
 import {
   AccordionContent,
   AccordionItem,
@@ -64,13 +65,14 @@ const NavItem = ({
   const onClick = (href: string) => {
     router.push(href);
   };
+
   return (
     <AccordionItem value={organization.id} className="border-none">
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
           "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
-          isActive && !isExpanded && "bg-cyan-500/10 text-cyan-700"
+          isActive && !isExpanded && "bg-sky-500/10 text-sky-700"
         )}
       >
         <div className="flex items-center gap-x-2">
@@ -78,29 +80,32 @@ const NavItem = ({
             <Image
               fill
               src={organization.imageUrl}
-              alt="organization"
+              alt="Organization"
               className="rounded-sm object-cover"
             />
-            <span className="font-medium text-sm">{organization.name}</span>
           </div>
+          <span className="font-medium text-sm">{organization.name}</span>
         </div>
       </AccordionTrigger>
       <AccordionContent className="pt-1 text-neutral-700">
-        {routes.organizationSideBarNav.map((route) => (
-          <Button
-            key={route.label}
-            size="sm"
-            onClick={() => onClick(route.href)}
-            className={cn(
-              "w-full font-normal justify-start pl-10 mb-1",
-              pathname === route.href && "bg-cyan-500/10 text-cyan-700"
-            )}
-            variant="ghost"
-          >
-            {route.icon}
-            {route.label}
-          </Button>
-        ))}
+        {routes.organizationSideBarNav.map((route) => {
+          const Icon = Icons[route.icon || "arrowRight"];
+          return (
+            <Button
+              key={route.href}
+              size="sm"
+              onClick={() => onClick(route.href)}
+              className={cn(
+                "w-full font-normal justify-start pl-10 mb-1 flex items-center",
+                pathname === route.href && "bg-sky-500/10 text-sky-700"
+              )}
+              variant="ghost"
+            >
+              <Icon className="h-4 w-4 mr-2" />
+              {route.label}
+            </Button>
+          );
+        })}
       </AccordionContent>
     </AccordionItem>
   );
