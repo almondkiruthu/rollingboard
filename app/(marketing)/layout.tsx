@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 import Link from "next/link";
 
+import MainNav from "@/app/(marketing)/_components/main-nav";
 import { Icons } from "@/components/icons";
-import MainNav from "@/components/main-nav";
 import SiteFooter from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { marketingConfig } from "@/config/marketing";

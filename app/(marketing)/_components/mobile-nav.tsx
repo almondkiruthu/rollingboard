@@ -2,9 +2,13 @@ import * as React from "react";
 
 import Link from "next/link";
 
-import { Icons } from "./icons";
-import { Separator } from "./ui/separator";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Icons } from "../../../components/icons";
+import { Separator } from "../../../components/ui/separator";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "../../../components/ui/sheet";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "@/types";

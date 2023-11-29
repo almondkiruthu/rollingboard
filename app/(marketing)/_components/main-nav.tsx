@@ -4,9 +4,9 @@ import * as React from "react";
 
 import Link from "next/link";
 
+import MobileNav from "./mobile-nav";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "@/types";
-import MobileNav from "./mobile-nav";
 
 interface MainNavProps {
   items?: MainNavItem[];
