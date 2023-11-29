@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { Organization } from "@clerk/nextjs/server";
 
 export type NavItem = {
   title: string;
@@ -7,6 +8,16 @@ export type NavItem = {
 };
 
 export type MainNavItem = NavItem;
+
+export type OrganizationNavItem = {
+  label: string;
+  icon?: keyof typeof Icons;
+  href: string;
+};
+
+export type OrganizationSideBarNav = {
+  organizationSideBarNav: OrganizationNavItem[];
+};
 
 export type SideBarNavItem = {
   title: string;

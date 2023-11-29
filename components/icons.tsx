@@ -1,10 +1,12 @@
 import {
+  Activity,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
   Command,
   CreditCard,
   FileText,
+  Layout,
   Loader2,
   LucideIcon,
   LucideProps,
@@ -30,6 +32,8 @@ export const Icons = {
   user: User,
   arrowRight: ArrowRight,
   add: Plus,
+  boards: Layout,
+  activity: Activity,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

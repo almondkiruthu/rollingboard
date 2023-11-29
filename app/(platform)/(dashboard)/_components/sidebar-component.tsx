@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import NavItem, { Organization } from "./nav-item-component";
 import { Icons } from "@/components/icons";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -77,7 +78,15 @@ const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
         defaultValue={defaultAccordionValue}
         className="space-y-2"
       >
-        {/* TODO: Map the sidebar nav items */}
+        {userMemberships.data.map(({ organization }) => (
+          <NavItem
+            key={organization.id}
+            isActive={activeOrganization?.id === organization.id}
+            isExpanded={expanded[organization.id]}
+            organization={organization as Organization}
+            onExpand={onExpand}
+          />
+        ))}
       </Accordion>
     </>
   );
