@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 
 import { useParams } from "next/navigation";
@@ -12,9 +14,9 @@ const OrgControl = () => {
     if (!setActive) return;
 
     setActive({
-      organization: params.organizationSlug as string,
+      organization: params.organizationId as string,
     });
-  }, [setActive, params.organziationSlug]);
+  }, [setActive, params.organziationId]);
 
   return null;
 };

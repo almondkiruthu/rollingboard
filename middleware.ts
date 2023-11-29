@@ -8,8 +8,8 @@ export default authMiddleware({
     if (auth.userId && auth.isPublicRoute) {
       let path = "/select-org";
 
-      if (auth.orgSlug) {
-        path = `/organization/${auth.orgSlug}`;
+      if (auth.orgId) {
+        path = `/organization/${auth.orgId}`;
       }
 
       const organizationSelection = new URL(path, req.url);
@@ -20,11 +20,7 @@ export default authMiddleware({
       return redirectToSignIn({ returnBackUrl: req.url });
     }
 
-    if (
-      auth.userId &&
-      !auth.orgSlug &&
-      req.nextUrl.pathname !== "/select-org"
-    ) {
+    if (auth.userId && !auth.orgId && req.nextUrl.pathname !== "/select-org") {
       const organizationSelection = new URL("/select-org", req.url);
 
       return NextResponse.redirect(organizationSelection);
