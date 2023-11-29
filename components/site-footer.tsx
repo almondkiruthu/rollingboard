@@ -1,6 +1,4 @@
 import { Icons } from "./icons";
-import { ModeToggle } from "./mode-toggle";
-// import { ModeToggle } from "./mode-toggle";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -50,7 +48,6 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
             .
           </p>
         </div>
-        {/* <ModeToggle /> */}
         <p className="text-center text-sm leading-loose md:text-left">
           Light mode is the new dark mode 😊
         </p>
