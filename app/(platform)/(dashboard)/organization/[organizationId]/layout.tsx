@@ -1,4 +1,4 @@
-import OrgControl from "./_components/org-control-component";
+import { OrgControl } from "./_components/org-control-component";
 
 interface OrganizationSlugLayoutProps {
   children: React.ReactNode;
