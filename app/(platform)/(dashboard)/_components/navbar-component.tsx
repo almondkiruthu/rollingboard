@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
         <MobileSidebar />
         <div>
-          <Button variant="primary" size="icon" className="flex items-center">
+          <Button variant="primary" size="sm" className="flex items-center">
             <Icons.add className="md:mr-2 h-4 w-4" />
             <p className="hidden md:block">New Project</p>
           </Button>
