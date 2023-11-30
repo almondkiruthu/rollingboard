@@ -27,7 +27,7 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
             >
               Taxonomy
             </a>
-            . Built by{" "}
+            {/* . Built by{" "}
             <a
               href="https://twitter.com/shadcn"
               target="_blank"
@@ -35,7 +35,7 @@ const SiteFooter = ({ className }: React.HTMLAttributes<HTMLElement>) => {
               className="font-medium underline underline-offset-4"
             >
               Shadcn
-            </a>
+            </a> */}
             . The source code is available on{" "}
             <a
               href={siteConfig.links.github}
