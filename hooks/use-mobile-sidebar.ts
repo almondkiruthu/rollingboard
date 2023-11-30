@@ -1,13 +1,13 @@
 import { create } from "zustand";
 
-interface MobileSidebarStore {
+type MobileSidebarStore = {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
-}
+};
 
 export const useMobileSidebar = create<MobileSidebarStore>((set) => ({
   isOpen: false,
-  onOpen: () => set((store) => ({ isOpen: true })),
-  onClose: () => set((store) => ({ isOpen: true })),
+  onOpen: () => set({ isOpen: true }),
+  onClose: () => set({ isOpen: false }),
 }));

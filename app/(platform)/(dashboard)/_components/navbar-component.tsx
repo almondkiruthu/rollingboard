@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import MobileSidebar from "./mobile-sidebar-component";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
@@ -11,7 +12,6 @@ const Navbar = () => {
       className="fixed w-full bg-background/95 z-50 backdrop-blur 
   supports-[backdrop-filter]:bg-background/60 border-b shadow-sm h-20 flex item-center"
     >
-      {/* TODO: Mobile Sidebar  */}
       <div className="container flex items-center gap-x-6">
         <div className="hidden md:flex">
           <Link href="/" className="items-center space-x-2 flex">
@@ -21,8 +21,9 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
+        <MobileSidebar />
         <div>
-          <Button variant="primary" size="sm" className="flex items-center">
+          <Button variant="primary" size="icon" className="flex items-center">
             <Icons.add className="md:mr-2 h-4 w-4" />
             <p className="hidden md:block">New Project</p>
           </Button>
