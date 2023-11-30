@@ -117,14 +117,13 @@ interface SkeletonNavItemProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 NavItem.Skeleton = function SkeletonNavItem({
   className,
-  ...props
 }: SkeletonNavItemProps) {
   return (
-    <div className={(cn("flex items-center gap-x-2"), className)} {...props}>
+    <div className={cn("flex items-center gap-x-2", className)}>
       <div className="w-10 h-10 relative shrink-0">
         <Skeleton className="h-full w-full absolute" />
       </div>
-      <Skeleton className="h-10 w-full mt-2" />
+      <Skeleton className="h-10 w-full" />
     </div>
   );
 };
