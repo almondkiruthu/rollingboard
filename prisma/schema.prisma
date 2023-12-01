@@ -61,3 +61,55 @@ model TaskCard {
   @@index([taskId])
   @@map("task_cards")
 }
+
+enum ACTION {
+  CREATE
+  UPDATE
+  DELETE
+}
+
+enum ENTITY_TYPE {
+  PROJECT
+  TASK
+  TASKCARD
+}
+
+model AuditLog {
+  id          String  @id @default(cuid())
+  orgId       String
+  action      ACTION
+  entityId    String
+  entityType  ENTITY_TYPE
+  entityTitle String
+  userId      String
+  userImage   String @db.Text
+  userName    String @db.Text
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map(name:"audit_logs")
+}
+
+model OrgLimit {
+  id          String @id @default(cuid())
+  orgId       String @unique
+  count       Int @default(0)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("org_limit")
+}
+
+model OrgSubscription {
+  id                String @id @default(cuid())
+  orgId             String @unique
+
+  stripeCustomerId  String? @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId String? @unique @map(name: "stripe_subscription_id")
+  stripePriceId        String? @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+
+  @@map("org_subscriptions")
+}
