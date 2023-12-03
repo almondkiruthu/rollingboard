@@ -13,7 +13,8 @@ const MarketingPage = () => {
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
           <Link
             href={siteConfig.links.twitter || ""}
-            className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+            className="rounded-2xl bg-gradient-to-tr from-cyan-700/10 to-cyan-700/10 
+            px-4 py-1.5 text-sm font-medium"
             target="_blank"
           >
             Follow along on Github
@@ -25,7 +26,7 @@ const MarketingPage = () => {
             Create, share, and get feedback with collaborative <br /> boards for
             rapid development.
           </p>
-          <div className="space-x-4">
+          <div className="flex items-center space-x-4">
             <Link
               href="/sign-up"
               className={cn(buttonVariants({ size: "lg" }), "bg-cyan-700")}
