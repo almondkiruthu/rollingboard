@@ -16,7 +16,13 @@ interface MarketingLayoutProps {
 
 const MarketingLayout = ({ children }: MarketingLayoutProps) => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col grid-bg relative h-full w-full">
+      <div
+        className="absolute -z-10 bottom-0 left-0 right-0 top-0 
+      bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] 
+      bg-[size:2rem_2rem] md:bg-[size:4rem_4rem] 
+      [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+      ></div>
       <header
         className="fixed w-full bg-background/95 z-50 backdrop-blur 
       supports-[backdrop-filter]:bg-background/60"
