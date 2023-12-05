@@ -15,6 +15,7 @@ import {
   Settings,
   User,
   X,
+  XCircle,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -22,6 +23,7 @@ export type Icon = LucideIcon;
 export const Icons = {
   logo: Command,
   close: X,
+  closeIcon: XCircle,
   menu: Menu,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
