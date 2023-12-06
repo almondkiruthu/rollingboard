@@ -1,10 +1,15 @@
 import Image from "next/image";
 
 import { Icons } from "@/components/icons";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useOrganization } from "@clerk/nextjs";
 
 const Info = () => {
   const { organization, isLoaded } = useOrganization();
+
+  if (!isLoaded) {
+    return <Info.Skeleton />;
+  }
   return (
     <div className="flex items-center gap-x4">
       <div className="w-8 h-8 relative">
@@ -29,3 +34,21 @@ const Info = () => {
 };
 
 export default Info;
+
+interface InfoSkeletonProps extends React.HTMLAttributes<HTMLDivElement> {}
+Info.Skeleton = function InfoSkeleton() {
+  return (
+    <div className="flex items-center gap-x-4">
+      <div className="w-8 h-8 relative">
+        <Skeleton className="w-full h-full absolute" />
+      </div>
+      <div className="space-y-1">
+        <Skeleton className="h-10 w-[200px]" />
+        <div className="flex items-center">
+          <Skeleton className="h-3 w-3 mr-2" />
+          <Skeleton className="h-3 w-[100px]" />
+        </div>
+      </div>
+    </div>
+  );
+};
