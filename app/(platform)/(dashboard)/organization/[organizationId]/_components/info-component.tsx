@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import { Icons } from "@/components/icons";
@@ -11,13 +13,13 @@ const Info = () => {
     return <Info.Skeleton />;
   }
   return (
-    <div className="flex items-center gap-x4">
+    <div className="flex items-center gap-x-4">
       <div className="w-8 h-8 relative">
         <Image
           fill
           src={organization?.imageUrl as string}
           alt="Organization"
-          className="rounded-md object-cover"
+          className="rounded-md object-cover w-4 h-4"
         />
       </div>
       <div className="space-y-1">
