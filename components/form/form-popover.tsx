@@ -4,6 +4,9 @@ import { useRef } from "react";
 
 import { useRouter } from "next/navigation";
 
+import { FormInput } from "./form-input";
+import FormPicker from "./form-picker";
+import FormSubmit from "./form-submit";
 import { createProject } from "@/actions/create-project";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -31,13 +34,13 @@ const FormPopover = ({
 }: FormPopoverProps) => {
   const router = useRouter();
   const closeRef = useRef<HTMLButtonElement>(null);
-  const { execute, data } = useAction(createProject, {
+  const { execute, fieldErrors } = useAction(createProject, {
     onSucces: (data) => {
       toast({
-        title: "Board Created!",
+        title: "Project Created!",
       });
       closeRef.current?.click;
-      router.push(`/project/${data.id}`);
+      // router.push(`/project/${data.id}`);
     },
     onError: (error) => {
       toast({
@@ -47,8 +50,10 @@ const FormPopover = ({
     },
   });
 
-  const onDubmit = (formData: FormData) => {
+  const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
+    const image = formData.get("image") as string;
+    execute({ title, image });
   };
 
   return (
@@ -71,7 +76,18 @@ const FormPopover = ({
             <Icons.close className="h-3 w-3" />
           </Button>
         </PopoverClose>
-        {/* TODO: Form  */}
+        <form action={onSubmit} className="space-y-4">
+          <div className="space-y-4">
+            <FormPicker id="image" errors={fieldErrors} />
+            <FormInput
+              id="title"
+              label="Project title"
+              type="text"
+              errors={fieldErrors}
+            />
+          </div>
+          <FormSubmit className="w-full">Create</FormSubmit>
+        </form>
       </PopoverContent>
     </Popover>
   );
