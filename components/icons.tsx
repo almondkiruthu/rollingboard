@@ -1,6 +1,7 @@
 import {
   Activity,
   ArrowRight,
+  Check,
   ChevronLeft,
   ChevronRight,
   Command,
@@ -38,6 +39,7 @@ export const Icons = {
   boards: Layout,
   activity: Activity,
   question: HelpCircle,
+  check: Check,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
