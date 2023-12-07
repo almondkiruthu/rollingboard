@@ -23,7 +23,7 @@ const Info = () => {
         />
       </div>
       <div className="space-y-1">
-        <p className="font-semibold tracking-tight text-xl">
+        <p className="font-semibold text-xl font-heading">
           {organization?.name}
         </p>
         <div className="flex items-center text-xs text-muted-foreground">
