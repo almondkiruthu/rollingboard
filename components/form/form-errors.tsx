@@ -22,6 +22,7 @@ const FormErrors = ({ id, errors }: FormErrorsProps) => {
         bg-rose-500/10 rounded-sm"
         >
           <Icons.closeIcon className="h-4 w-4 mr-2" />
+          {error}
         </div>
       ))}
     </div>

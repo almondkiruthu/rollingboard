@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import FormErrors from "./form-errors";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
@@ -63,7 +64,7 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
             aria-describedby={`${id}-error`}
           />
         </div>
-        {/* TODO: FormErrors component */}
+        <FormErrors id={id} errors={errors} />
       </div>
     );
   }

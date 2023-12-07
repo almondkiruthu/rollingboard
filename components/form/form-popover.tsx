@@ -37,7 +37,7 @@ const FormPopover = ({
   const { execute, fieldErrors } = useAction(createProject, {
     onSucces: (data) => {
       toast({
-        title: "Project Created!",
+        title: "Project Created ! 🎉",
       });
       closeRef.current?.click;
       // router.push(`/project/${data.id}`);
