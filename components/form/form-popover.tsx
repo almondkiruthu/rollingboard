@@ -54,12 +54,20 @@ const FormPopover = ({
   return (
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent
+        align={align}
+        className="w-80 pt-3"
+        side={side}
+        sideOffset={sideOffset}
+      >
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           Create a board
         </div>
         <PopoverClose>
-          <Button variant="ghost">
+          <Button
+            className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
+            variant="ghost"
+          >
             <Icons.close className="h-3 w-3" />
           </Button>
         </PopoverClose>

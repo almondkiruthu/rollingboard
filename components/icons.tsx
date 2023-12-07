@@ -6,6 +6,7 @@ import {
   Command,
   CreditCard,
   FileText,
+  HelpCircle,
   Layout,
   Loader2,
   LucideIcon,
@@ -36,6 +37,7 @@ export const Icons = {
   add: Plus,
   boards: Layout,
   activity: Activity,
+  question: HelpCircle,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
