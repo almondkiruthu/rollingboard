@@ -66,7 +66,7 @@ const FormPopover = ({
         sideOffset={sideOffset}
       >
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
-          Create a board
+          Create a project
         </div>
         <PopoverClose>
           <Button
