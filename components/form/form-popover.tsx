@@ -40,7 +40,7 @@ const FormPopover = ({
         title: "Project Created ! 🎉",
       });
       closeRef.current?.click;
-      // router.push(`/project/${data.id}`);
+      router.push(`/project/${data.id}`);
     },
     onError: (error) => {
       toast({
