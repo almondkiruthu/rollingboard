@@ -7,6 +7,26 @@ interface ProjectIdLayoutProps {
   children?: React.ReactNode;
   params: { projectId: string };
 }
+export async function generateMetadata({ params }: ProjectIdLayoutProps) {
+  const { orgId } = auth();
+
+  if (!orgId) {
+    return {
+      title: "Board",
+    };
+  }
+
+  const board = await db.project.findUnique({
+    where: {
+      id: params.projectId,
+      orgId,
+    },
+  });
+
+  return {
+    title: board?.title || "Board",
+  };
+}
 
 const ProjectIdLayout = async ({ children, params }: ProjectIdLayoutProps) => {
   const { orgId } = auth();
