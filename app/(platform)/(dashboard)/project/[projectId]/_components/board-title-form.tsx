@@ -31,17 +31,24 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
   };
-  return (
-    <form className="flex items-center gap-x-2">
-      <FormInput
-        ref={inputRef}
-        id="title"
-        onBlur={onBlur}
-        defaultValue={title}
-        className="text-lg font-bold px-[7px] py-1 bg-transparent"
-      />
-    </form>
-  );
+
+  const onBlur = () => {
+    formRef.current?.requestSubmit();
+  };
+
+  if (editing) {
+    return (
+      <form className="flex items-center gap-x-2">
+        <FormInput
+          ref={inputRef}
+          id="title"
+          onBlur={onBlur}
+          defaultValue={title}
+          className="text-lg font-bold px-[7px] py-1 bg-transparent"
+        />
+      </form>
+    );
+  }
 };
 
 export default BoardTitleForm;
