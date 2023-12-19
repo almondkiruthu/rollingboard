@@ -1,7 +1,8 @@
+import { revalidatePath } from "next/cache";
+
 import { InputType, ReturnType } from "./type";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
-import { revalidatePath } from "next/cache";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
@@ -28,9 +29,10 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-        error: "Failed to update"
-    }
+      error: "Failed to update",
+    };
   }
 
-  revalidatePath
+  revalidatePath(`/board/${id}`);
+  return { data: project };
 };
