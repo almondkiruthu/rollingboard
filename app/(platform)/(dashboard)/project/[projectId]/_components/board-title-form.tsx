@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 
+import { updateBoard } from "@/actions/update-board";
 import { FormInput } from "@/components/form/form-input";
 import { useAction } from "@/hooks/use-action";
 import { Project } from "@prisma/client";
@@ -9,7 +10,13 @@ interface BoardTitleFormProps {
 }
 
 const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
-  const { execute } = useAction();
+  const { execute } = useAction(updateBoard, {
+    onSucces: (data) => {
+      // TODO: Add toast on success
+      setTitle(data.title);
+      disableEditing;
+    },
+  });
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
