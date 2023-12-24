@@ -16,6 +16,9 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
       setTitle(data.title);
       disableEditing;
     },
+    onError: (error) => {
+      //TODO: Add toast on error
+    },
   });
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -37,6 +40,11 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
 
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
+
+    execute({
+      title,
+      id: data.id,
+    });
   };
 
   const onBlur = () => {
@@ -45,7 +53,11 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
 
   if (editing) {
     return (
-      <form className="flex items-center gap-x-2">
+      <form
+        action={onSubmit}
+        ref={formRef}
+        className="flex items-center gap-x-2"
+      >
         <FormInput
           ref={inputRef}
           id="title"
@@ -56,6 +68,7 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
       </form>
     );
   }
+  
 };
 
 export default BoardTitleForm;
