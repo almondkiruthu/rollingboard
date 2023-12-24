@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 
 import { updateBoard } from "@/actions/update-board";
 import { FormInput } from "@/components/form/form-input";
+import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 import { Project } from "@prisma/client";
 
@@ -68,7 +69,15 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
       </form>
     );
   }
-  
+  return (
+    <Button
+      onClick={enableEditing}
+      variant="ghost"
+      className="font-bold text-lg h-auto w-auto p-1 px-2"
+    >
+      {title}
+    </Button>
+  );
 };
 
 export default BoardTitleForm;
