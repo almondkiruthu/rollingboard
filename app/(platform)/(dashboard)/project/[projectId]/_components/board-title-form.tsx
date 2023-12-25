@@ -5,6 +5,7 @@ import { FormInput } from "@/components/form/form-input";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 import { Project } from "@prisma/client";
+import { toast } from "sonner";
 
 interface BoardTitleFormProps {
   data: Project;
@@ -13,7 +14,8 @@ interface BoardTitleFormProps {
 const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
   const { execute } = useAction(updateBoard, {
     onSucces: (data) => {
-      // TODO: Add toast on success
+      toast.success(`Board "${data.title}" updated!`);
+      toast;
       setTitle(data.title);
       disableEditing;
     },
