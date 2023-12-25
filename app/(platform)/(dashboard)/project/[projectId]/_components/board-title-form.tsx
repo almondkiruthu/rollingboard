@@ -20,7 +20,7 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
       disableEditing;
     },
     onError: (error) => {
-      //TODO: Add toast on error
+      toast.error(error);
     },
   });
   const formRef = useRef<HTMLFormElement>(null);
