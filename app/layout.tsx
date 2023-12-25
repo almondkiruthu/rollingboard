@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 import { Analytics } from "@/components/analytics";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
