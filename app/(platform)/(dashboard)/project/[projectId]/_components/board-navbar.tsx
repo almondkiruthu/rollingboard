@@ -1,3 +1,4 @@
+import BoardTitleForm from "./board-title-form";
 import { Project } from "@prisma/client";
 
 interface BoardNavbarProps {
@@ -7,11 +8,11 @@ interface BoardNavbarProps {
 const BoardNavbar = ({ data }: BoardNavbarProps) => {
   return (
     <div
-      className="W-FULL H-14 z-40 bg-black/50 fixed top-14 flex items-center px-6 
+      className="container w-full h-14 z-40 bg-black/50 fixed top-14 flex items-center px-8 py-14 
   gap-x-4 text-white
   "
     >
-      {/* TODO: Create board title form  */}
+      <BoardTitleForm className="container" data={data} />
       <div className="ml-auto">{/* TODO: Create Board Options  */}</div>
     </div>
   );

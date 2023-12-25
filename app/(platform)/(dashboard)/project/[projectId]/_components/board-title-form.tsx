@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 
 import { updateBoard } from "@/actions/update-board";
@@ -7,7 +9,7 @@ import { useAction } from "@/hooks/use-action";
 import { Project } from "@prisma/client";
 import { toast } from "sonner";
 
-interface BoardTitleFormProps {
+interface BoardTitleFormProps extends React.HTMLAttributes<HTMLDivElement> {
   data: Project;
 }
 
@@ -74,7 +76,7 @@ const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
   return (
     <Button
       onClick={enableEditing}
-      variant="ghost"
+      variant="transparent"
       className="font-bold text-lg h-auto w-auto p-1 px-2"
     >
       {title}

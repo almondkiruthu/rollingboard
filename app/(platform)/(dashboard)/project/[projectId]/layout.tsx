@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 
+import BoardNavbar from "./_components/board-navbar";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 
@@ -50,7 +51,7 @@ const ProjectIdLayout = async ({ children, params }: ProjectIdLayoutProps) => {
       className="relative h-full bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${board.imageFullUrl})` }}
     >
-      {/* TODO: Create BoardNavbar  */}
+      <BoardNavbar data={board} />
       <div className="absolute inset-0 bg-black/10" />
       <main className="relative pt-28 h-full container">{children}</main>
     </div>
