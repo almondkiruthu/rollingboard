@@ -1,5 +1,5 @@
 const Page = () => {
-  return <div>BoardIdPage</div>;
+  return <div className="mt-8">BoardIdPage</div>;
 };
 
 export default Page;

@@ -8,11 +8,10 @@ interface BoardNavbarProps {
 const BoardNavbar = ({ data }: BoardNavbarProps) => {
   return (
     <div
-      className="container w-full h-14 z-40 bg-black/50 fixed top-14 flex items-center px-8 py-14 
-  gap-x-4 text-white
-  "
+      className="w-full h-16 z-[40] bg-black/50 fixed top-14 mt-5 
+    flex items-center px-6 gap-x-4 text-white"
     >
-      <BoardTitleForm className="container" data={data} />
+      <BoardTitleForm data={data} />
       <div className="ml-auto">{/* TODO: Create Board Options  */}</div>
     </div>
   );
