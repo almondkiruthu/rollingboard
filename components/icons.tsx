@@ -13,6 +13,7 @@ import {
   LucideIcon,
   LucideProps,
   Menu,
+  MoreHorizontal,
   Plus,
   Settings,
   User,
@@ -40,6 +41,7 @@ export const Icons = {
   activity: Activity,
   question: HelpCircle,
   check: Check,
+  more: MoreHorizontal,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
