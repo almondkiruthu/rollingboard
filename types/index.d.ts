@@ -56,3 +56,5 @@ export type DashBoardConfig = {
 };
 
 export type TaskWithCards = Task & { taskCards: TaskCard[] };
+
+export type TaskCardWithList = TaskCard & { task: Task };
