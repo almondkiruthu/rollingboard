@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { Organization } from "@clerk/nextjs/server";
+import { Task, TaskCard } from "@prisma/client";
 
 export type NavItem = {
   title: string;
@@ -53,3 +54,5 @@ export type DashBoardConfig = {
   mainNav: MainNavItem[];
   sideBarNav: SideBarNavItem[];
 };
+
+export type TaskWithCards = Task & { taskCards: TaskCard[] };
