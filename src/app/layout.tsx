@@ -1,32 +1,32 @@
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { cn } from '@/lib/utils'
+import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 
-import Providers from "@/components/providers";
-import "../styles/globals.css";
+import Providers from '@/components/providers'
+import '../styles/globals.css'
 
 const fontRegularSans = localFont({
-  src: "../../assets/fonts/Inter-Regular.ttf",
-  variable: "--font-sans",
-});
+  src: '../../assets/fonts/Inter-Regular.ttf',
+  variable: '--font-sans',
+})
 
 const fontBoldSans = localFont({
-  src: "../../assets/fonts/Inter-Bold.ttf",
-  variable: "--font-BoldSans",
-});
+  src: '../../assets/fonts/Inter-Bold.ttf',
+  variable: '--font-BoldSans',
+})
 
 const fontHeading = localFont({
-  src: "../../assets/fonts/CalSans-SemiBold.woff2",
-  variable: "--font-heading",
-});
+  src: '../../assets/fonts/CalSans-SemiBold.woff2',
+  variable: '--font-heading',
+})
 
 export const metadata: Metadata = {
-  title: "Limarge consultants",
-  description: "Your go to consultants",
-};
+  title: 'Rollingboard',
+  description: 'Your go to project management tool',
+}
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen font-sans_regular antialiased",
+          'min-h-screen font-sans_regular antialiased',
           fontRegularSans.variable,
           fontBoldSans.variable,
           fontHeading.variable,
@@ -47,5 +47,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Providers>
       </body>
     </html>
-  );
+  )
 }
