@@ -19,11 +19,11 @@ import { Input } from '@/components/ui/input'
 // import { signUpWithGithub, signUpWithGoogle } from '@/lib/oauth'
 
 import { Icons } from '@/components/icons'
-// import { useLogin } from '../api/use-login'
+import { useLogin } from '../api/use-login'
 import { loginSchema } from '../schemas'
 
 export const SignInCard = () => {
-  // const { mutate, isPending } = useLogin()
+  const { mutate, isPending } = useLogin()
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -34,8 +34,7 @@ export const SignInCard = () => {
   })
 
   const onSubmit = (values: z.infer<typeof loginSchema>) => {
-    // mutate({ json: values });
-    console.log(values)
+    mutate({ json: values })
   }
 
   return (
@@ -81,10 +80,7 @@ export const SignInCard = () => {
                 </FormItem>
               )}
             />
-            <Button 
-            // disabled={}
-            size="lg" 
-            className="w-full">
+            <Button disabled={isPending} size="lg" className="w-full">
               Login
             </Button>
           </form>
@@ -96,7 +92,7 @@ export const SignInCard = () => {
       <CardContent className="flex flex-col gap-y-4 p-7">
         <Button
           // onClick={() => signUpWithGoogle()}
-          // disabled={isPending}
+          disabled={isPending}
           variant="secondary"
           size="lg"
           className="w-full"
@@ -106,7 +102,7 @@ export const SignInCard = () => {
         </Button>
         <Button
           // onClick={() => signUpWithGithub()}
-          // disabled={isPending}
+          disabled={isPending}
           variant="secondary"
           size="lg"
           className="w-full"
