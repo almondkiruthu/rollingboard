@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 export default function Home() {
   return (
     <div className="flex gap-x-4">
-      <Button variant={'primary'}>primary</Button>
+      <Button variant={'primary'}>Hello</Button>
       <Button variant={'destructive'}>destructive</Button>
       <Button variant={'outline'}>outline</Button>
       <Button variant={'secondary'}>secondary</Button>
