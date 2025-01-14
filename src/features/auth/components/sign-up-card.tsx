@@ -25,11 +25,11 @@ import {
 import { Input } from '@/components/ui/input'
 
 import { Icons } from '@/components/icons'
+import { useRegister } from '../api/use-register'
 import { registerSchema } from '../schemas'
-// import { useRegister } from "../api/use-register";
 
 export const SignUpCard = () => {
-  // const { mutate, isPending } = useRegister();
+  const { mutate, isPending } = useRegister()
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -41,8 +41,7 @@ export const SignUpCard = () => {
   })
 
   const onSubmit = (values: z.infer<typeof registerSchema>) => {
-    // mutate({ json: values });
-    console.log(values)
+    mutate({ json: values })
   }
 
   return (
@@ -114,11 +113,7 @@ export const SignUpCard = () => {
                 </FormItem>
               )}
             />
-            <Button
-              // disabled={isPending}
-              size="lg"
-              className="w-full"
-            >
+            <Button disabled={isPending} size="lg" className="w-full">
               Register
             </Button>
           </form>
@@ -130,23 +125,23 @@ export const SignUpCard = () => {
       <CardContent className="flex flex-col gap-y-4 p-7">
         <Button
           // onClick={() => signUpWithGoogle()}
-          // disabled={isPending}
+          disabled={isPending}
           variant="secondary"
           size="lg"
           className="w-full"
         >
           <Icons.google className="mr-2 size-5" />
-          Login with Google
+          Continue with Google
         </Button>
         <Button
           // onClick={() => signUpWithGithub()}
-          // disabled={isPending}
+          disabled={isPending}
           variant="secondary"
           size="lg"
           className="w-full"
         >
           <Icons.gitHub className="mr-2 size-5" />
-          Login with Github
+          Continue with Github
         </Button>
       </CardContent>
       <div className="px-7">
