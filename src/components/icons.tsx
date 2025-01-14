@@ -274,4 +274,81 @@ export const Icons = {
       <path d="M1 1h22v22H1z" fill="none" />
     </svg>
   ),
+  mainLogo: ({ ...props }: LucideProps) => (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+      data-prefix="fab"
+      data-icon="rollingBoard-Logo"
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx="6.79412" cy="5.74407" r="3.29412" fill="#50ADBB" />
+      <circle
+        cx="6.79412"
+        cy="13.65"
+        r="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.6"
+      />
+      <ellipse
+        cx="6.79412"
+        cy="21.5558"
+        rx="3.29412"
+        ry="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.3"
+      />
+      <ellipse
+        cx="14.7"
+        cy="5.74407"
+        rx="3.29412"
+        ry="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.01"
+      />
+      <ellipse
+        cx="14.7"
+        cy="13.65"
+        rx="3.29412"
+        ry="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.9"
+      />
+      <ellipse
+        cx="14.7"
+        cy="21.5558"
+        rx="3.29412"
+        ry="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.6"
+      />
+      <circle
+        cx="22.6059"
+        cy="5.74407"
+        r="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.01"
+      />
+      <circle
+        cx="22.6059"
+        cy="13.65"
+        r="3.29412"
+        fill="#50ADBB"
+        fillOpacity="0.01"
+      />
+      <ellipse
+        cx="22.6059"
+        cy="21.5558"
+        rx="3.29412"
+        ry="3.29412"
+        fill="#50ADBB"
+      />
+    </svg>
+  ),
 }
