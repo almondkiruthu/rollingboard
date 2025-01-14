@@ -1,4 +1,5 @@
 import { TailwindIndicator } from '@/components/tailwind-indicator'
+import { Toaster } from '@/components/ui/sonner'
 import { QueryProvider } from './query-provider'
 
 interface ProvidersProps {
@@ -9,6 +10,7 @@ const Providers = ({ children }: ProvidersProps) => {
   return (
     <>
       <QueryProvider>
+        <Toaster />
         {children}
         <TailwindIndicator />
       </QueryProvider>

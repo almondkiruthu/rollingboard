@@ -8,13 +8,17 @@ import SiteFooter from '@/components/site-footer'
 import { buttonVariants } from '@/components/ui/button'
 import { marketingConfig } from '@/config/marketing'
 import { siteConfig } from '@/config/site'
+import { getCurrent } from '@/features/auth/queries'
 import { cn } from '@/lib/utils'
+import { UserButton } from '@/features/auth/components/user-button'
 
 interface MarketingLayoutProps {
   children: ReactNode
 }
 
-const MarketingLayout = ({ children }: MarketingLayoutProps) => {
+const MarketingLayout = async ({ children }: MarketingLayoutProps) => {
+  const user = await getCurrent()
+
   return (
     <div className="grid-bg relative flex h-full min-h-screen w-full flex-col">
       <div className="absolute bottom-0 left-0 right-0 top-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] md:bg-[size:4rem_4rem]"></div>
@@ -54,6 +58,7 @@ const MarketingLayout = ({ children }: MarketingLayoutProps) => {
             >
               Sign Up
             </Link>
+            {user ? <UserButton/> : null}
           </nav>
         </div>
       </header>
