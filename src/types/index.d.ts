@@ -1,4 +1,5 @@
 import { Icons } from '@/components/icons'
+import { Models } from 'node-appwrite'
 
 export type NavItem = {
   title: string
@@ -36,4 +37,11 @@ export type Siteconfig = {
 
 export type MarketingConfig = {
   mainNav: MainNavItem[]
+}
+
+export type Workspace = Models.Document & {
+  name: string
+  imageUrl: string
+  inviteCode: string
+  userId: string
 }
