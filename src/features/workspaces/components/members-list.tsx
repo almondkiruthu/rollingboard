@@ -64,7 +64,7 @@ export const MembersList = () => {
       <ConfirmDialog />
       <CardHeader className="flex flex-row items-center gap-x-4 p-7 space-y-0">
         <Button asChild variant="secondary" size="sm">
-          <Link href={`/workspaces/${workspaceId}`}>
+          <Link href={`dashboard/workspaces/${workspaceId}`}>
             <ArrowLeftIcon className="size-4 mr-2" />
             Back
           </Link>
@@ -96,7 +96,7 @@ export const MembersList = () => {
                     variant="secondary"
                     size="icon"
                   >
-                    <MoreVerticalIcon className="size-4 text-muted-foreground" />
+                    <MoreVerticalIcon className="size-4 text-white" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="bottom" align="end">
