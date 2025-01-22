@@ -22,7 +22,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-// import { useConfirm } from '@/hooks/use-confirm'
+import { useConfirm } from '@/hooks/use-confirm'
 import { cn } from '@/lib/utils'
 
 import { Workspace } from '@/types'
@@ -47,17 +47,17 @@ export const EditWorkspaceForm = ({
   const { mutate: resetInviteCode, isPending: isResettingInviteCode } =
     useResetInviteCode()
 
-  // const [DeleteDialog, confirmDelete] = useConfirm(
-  //   'Delete Workspace',
-  //   'This action cannot be undone.',
-  //   'destructive',
-  // )
+  const [DeleteDialog, confirmDelete] = useConfirm(
+    'Delete Workspace',
+    'This action cannot be undone.',
+    'destructive',
+  )
 
-  // const [ResetDialog, confirmReset] = useConfirm(
-  //   'Reset invite link',
-  //   'This will invalidate the current invite link',
-  //   'destructive',
-  // )
+  const [ResetDialog, confirmReset] = useConfirm(
+    'Reset invite link',
+    'This will invalidate the current invite link',
+    'destructive',
+  )
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -70,8 +70,7 @@ export const EditWorkspaceForm = ({
   })
 
   const handleDelete = async () => {
-    // const ok = await confirmDelete()
-    const ok = false
+    const ok = await confirmDelete()
 
     if (!ok) return
 
@@ -81,15 +80,14 @@ export const EditWorkspaceForm = ({
       },
       {
         onSuccess: () => {
-          window.location.href = '/'
+          window.location.href = '/dashboard'
         },
       },
     )
   }
 
   const handleResetInviteCode = async () => {
-    const ok = false
-    // const ok = await confirmReset()
+    const ok = await confirmReset()
     if (!ok) return
 
     resetInviteCode({
@@ -116,7 +114,7 @@ export const EditWorkspaceForm = ({
     }
   }
 
-  const fullInviteLink = `${window.location.origin}/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
+  const fullInviteLink = `${window.location.origin}/dashboard/workspaces/${initialValues.$id}/join/${initialValues.inviteCode}`
 
   const handleCopyInviteLink = () => {
     navigator.clipboard
@@ -126,8 +124,8 @@ export const EditWorkspaceForm = ({
 
   return (
     <div className="flex flex-col gap-y-4">
-      {/* <DeleteDialog /> */}
-      {/* <ResetDialog /> */}
+      <DeleteDialog />
+      <ResetDialog />
       <Card className="h-full w-full border-none shadow-none">
         <CardHeader className="flex flex-row items-center gap-x-4 space-y-0 p-7">
           <Button
