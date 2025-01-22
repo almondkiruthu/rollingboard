@@ -37,7 +37,7 @@ export const JoinWorkspaceForm = ({
       json: { code: inviteCode }
     }, {
       onSuccess: ({ data }) => {
-        router.push(`/workspaces/${data.$id}`);
+        router.push(`dashboard/workspaces/${data.$id}`);
       },
     });
   };
@@ -65,7 +65,7 @@ export const JoinWorkspaceForm = ({
             className="w-full lg:w-fit"
             disabled={isPending}
           >
-            <Link href="/">
+            <Link href="/dashboard">
               Cancel
             </Link>
           </Button>
