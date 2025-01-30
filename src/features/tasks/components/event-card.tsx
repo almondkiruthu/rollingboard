@@ -23,7 +23,7 @@ const statusColorMap: Record<TaskStatus, string> = {
   [TaskStatus.BACKLOG]: "border-l-pink-500",
   [TaskStatus.TODO]: "border-l-red-500",
   [TaskStatus.IN_PROGRESS]: "border-l-yellow-500",
-  [TaskStatus.IN_REVIEW]: "border-l-blue-500",
+  [TaskStatus.IN_REVIEW]: "border-l-cyan-500",
   [TaskStatus.DONE]: "border-l-emerald-500",
 };
 
@@ -42,7 +42,7 @@ export const EventCard = ({
   ) => {
     e.stopPropagation();
 
-    router.push(`/workspaces/${workspaceId}/tasks/${id}`);
+    router.push(`/dashboard/workspaces/${workspaceId}/tasks/${id}`);
   };
 
   return (
