@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-// import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 import { DottedSeparator } from '@/components/dotted-separator'
 import { Button } from '@/components/ui/button'
 import {
@@ -51,11 +51,11 @@ export const SignUpCard = () => {
         <CardDescription>
           By signing up, you agree to our{' '}
           <Link href="/privacy">
-            <span className="text-blue-700">Privacy Policy</span>
+            <span className="text-cyan-700">Privacy Policy</span>
           </Link>{' '}
           and{' '}
           <Link href="/terms">
-            <span className="text-blue-700">Terms of Service</span>
+            <span className="text-cyan-700">Terms of Service</span>
           </Link>
         </CardDescription>
       </CardHeader>
@@ -124,7 +124,7 @@ export const SignUpCard = () => {
       </div>
       <CardContent className="flex flex-col gap-y-4 p-7">
         <Button
-          // onClick={() => signUpWithGoogle()}
+          onClick={() => signUpWithGoogle()}
           disabled={isPending}
           variant="secondary"
           size="lg"
@@ -134,7 +134,7 @@ export const SignUpCard = () => {
           Continue with Google
         </Button>
         <Button
-          // onClick={() => signUpWithGithub()}
+          onClick={() => signUpWithGithub()}
           disabled={isPending}
           variant="secondary"
           size="lg"
@@ -151,7 +151,7 @@ export const SignUpCard = () => {
         <p>
           Already have an account?
           <Link href="/sign-in">
-            <span className="text-blue-700">&nbsp;Sign In</span>
+            <span className="text-cyan-700">&nbsp;Sign In</span>
           </Link>
         </p>
       </CardContent>

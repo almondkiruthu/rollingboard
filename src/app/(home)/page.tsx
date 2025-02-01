@@ -3,9 +3,12 @@ import Link from 'next/link'
 import { Icons } from '@/components/icons'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
+import { getCurrent } from '@/features/auth/queries'
 import { cn } from '@/lib/utils'
 
-const MarketingPage = () => {
+const MarketingPage = async () => {
+  const user = await getCurrent()
+
   return (
     <>
       {/* Hero Section */}
@@ -26,12 +29,21 @@ const MarketingPage = () => {
             rapid development.
           </p>
           <div className="flex items-center space-x-4">
-            <Link
-              href="/sign-up"
-              className={cn(buttonVariants({ size: 'lg' }), 'bg-cyan-700')}
-            >
-              Get Started
-            </Link>
+            {user ? (
+              <Link
+                href="/dashboard"
+                className={cn(buttonVariants({ size: 'lg' }), 'bg-cyan-700')}
+              >
+                Go to Dashboard
+              </Link>
+            ) : (
+              <Link
+                href="/sign-up"
+                className={cn(buttonVariants({ size: 'lg' }), 'bg-cyan-700')}
+              >
+                Get Started
+              </Link>
+            )}
             <Link
               href={siteConfig.links.github}
               target="_blank"

@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-// import { signUpWithGithub, signUpWithGoogle } from '@/lib/oauth'
+import { signUpWithGithub, signUpWithGoogle } from '@/lib/oauth'
 
 import { Icons } from '@/components/icons'
 import { useLogin } from '../api/use-login'
@@ -91,7 +91,7 @@ export const SignInCard = () => {
       </div>
       <CardContent className="flex flex-col gap-y-4 p-7">
         <Button
-          // onClick={() => signUpWithGoogle()}
+          onClick={() => signUpWithGoogle()}
           disabled={isPending}
           variant="secondary"
           size="lg"
@@ -101,7 +101,7 @@ export const SignInCard = () => {
           Login with Google
         </Button>
         <Button
-          // onClick={() => signUpWithGithub()}
+          onClick={() => signUpWithGithub()}
           disabled={isPending}
           variant="secondary"
           size="lg"
@@ -118,7 +118,7 @@ export const SignInCard = () => {
         <p>
           Don&apos;t have an account?
           <Link href="/sign-up">
-            <span className="text-blue-700">&nbsp;Sign Up</span>
+            <span className="text-cyan-700">&nbsp;Sign Up</span>
           </Link>
         </p>
       </CardContent>
