@@ -8,9 +8,9 @@ import SiteFooter from '@/components/site-footer'
 import { buttonVariants } from '@/components/ui/button'
 import { marketingConfig } from '@/config/marketing'
 import { siteConfig } from '@/config/site'
+import { UserButton } from '@/features/auth/components/user-button'
 import { getCurrent } from '@/features/auth/queries'
 import { cn } from '@/lib/utils'
-import { UserButton } from '@/features/auth/components/user-button'
 
 interface MarketingLayoutProps {
   children: ReactNode
@@ -34,31 +34,48 @@ const MarketingLayout = async ({ children }: MarketingLayoutProps) => {
             <MainNav items={marketingConfig.mainNav} />
           </div>
           <nav className="ml-auto flex gap-x-4 md:ml-0">
-            <Link
-              href="/sign-in"
-              className={cn(
-                buttonVariants({
-                  variant: 'ghost',
-                  size: 'sm',
-                }),
-                'px-4',
-              )}
-            >
-              Login
-            </Link>
-            <Link
-              href="/sign-up"
-              className={cn(
-                buttonVariants({
-                  variant: 'outline',
-                  size: 'sm',
-                }),
-                'border-white px-4',
-              )}
-            >
-              Sign Up
-            </Link>
-            {user ? <UserButton/> : null}
+            {user ? (
+              <Link
+                href="/dashboard"
+                className={cn(
+                  buttonVariants({
+                    variant: 'primary',
+                    size: 'sm',
+                  }),
+                  'px-4',
+                )}
+              >
+                Go to Dashboard
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  className={cn(
+                    buttonVariants({
+                      variant: 'ghost',
+                      size: 'sm',
+                    }),
+                    'px-4',
+                  )}
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className={cn(
+                    buttonVariants({
+                      variant: 'outline',
+                      size: 'sm',
+                    }),
+                    'border-white px-4',
+                  )}
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
+            {user ? <UserButton /> : null}
           </nav>
         </div>
       </header>
