@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src"
   },
   "dependencies": {
     "@hello-pangea/dnd": "17.0.0",
@@ -29,9 +29,9 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "hono": "4.6.3",
+    "hono": "4.12.8",
     "lucide-react": "^0.447.0",
-    "next": "14.2.23",
+    "next": "16.1.7",
     "next-themes": "^0.3.0",
     "node-appwrite": "14.0.0",
     "nuqs": "1.19.1",
@@ -56,7 +56,7 @@
     "@types/react-big-calendar": "1.8.11",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.14",
+    "eslint-config-next": "15.5.14",
     "postcss": "^8",
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-tailwindcss": "0.6.5",
